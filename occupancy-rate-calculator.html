@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Occupancy Rate Calculator for Airbnb: Occupancy, ADR &amp; RevPAR</title>
+<meta name="description" content="Free occupancy rate calculator for Airbnb and vacation rentals. Calculate occupancy %, average daily rate (ADR) and RevPAR for one or more units.">
+<link rel="canonical" href="https://georgeschmid.github.io/occupancy-rate-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Occupancy Rate Calculator for Airbnb: Occupancy, ADR &amp; RevPAR">
+<meta property="og:description" content="Free occupancy rate calculator for Airbnb and vacation rentals. Calculate occupancy %, average daily rate (ADR) and RevPAR for one or more units.">
+<meta property="og:url" content="https://georgeschmid.github.io/occupancy-rate-calculator.html">
+<meta property="og:image" content="https://georgeschmid.github.io/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Occupancy Rate Calculator", "description": "Calculate occupancy, ADR and RevPAR for short-term rentals.", "url": "https://georgeschmid.github.io/occupancy-rate-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you calculate occupancy rate for an Airbnb?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the nights booked by the nights available in the period. Available nights are the days in the period times the number of units, minus nights you blocked yourself (for personal use or repairs)."}}, {"@type": "Question", "name": "What is ADR?", "acceptedAnswer": {"@type": "Answer", "text": "Average daily rate: your rental revenue divided by the number of nights booked. It shows what you earn on an average booked night."}}, {"@type": "Question", "name": "What is RevPAR?", "acceptedAnswer": {"@type": "Answer", "text": "Revenue per available night (or room): revenue divided by all available nights, booked or not. It combines price and occupancy in one number, so it's the best single figure for comparing months or properties."}}, {"@type": "Question", "name": "Should I include blocked nights?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract nights you blocked on purpose, because they were never for sale. Don't subtract nights that simply didn't get booked; those are the ones occupancy is meant to measure."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://georgeschmid.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Occupancy Rate Calculator", "item": "https://georgeschmid.github.io/occupancy-rate-calculator.html"}]}</script>
+</head>
+<body data-calc="occupancy">
+<header class="site"><div class="wrap">
+<a class="logo" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1F4E5A"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#E9C46A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="17" width="3" height="7" rx="1" fill="#fff"/><rect x="14.5" y="14" width="3" height="10" rx="1" fill="#fff"/><rect x="19" y="19" width="3" height="5" rx="1" fill="#2A9D8F"/></svg>Host Profit Tools</a>
+<nav class="main" aria-label="Calculators"><a href="airbnb-profit-calculator.html">Airbnb Profit</a><a href="airbnb-fee-calculator.html">Fee</a><a href="nightly-rate-calculator.html">Nightly Rate</a><a href="occupancy-rate-calculator.html">Occupancy Rate</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="./">Home</a> › Occupancy Rate Calculator</div>
+<div class="page-head"><h1>Occupancy Rate Calculator</h1>
+<p class="lead">Calculate occupancy, average daily rate (ADR) and revenue per available night (RevPAR) for one rental or several.</p></div>
+<div class="calc">
+<div><h2>Your period</h2>
+<div class="fields" style="margin-top:12px">
+<div class="field"><label for="booked">Nights booked</label><input id="booked" type="number" inputmode="decimal" min="0" step="1" value="21"></div>
+<div class="field"><label for="days">Days in the period</label><input id="days" type="number" inputmode="decimal" min="0" step="1" value="30"><small>30 for a month, 365 for a year</small></div>
+<div class="field"><label for="units">Number of units</label><input id="units" type="number" inputmode="decimal" min="0" step="1" value="1"></div>
+<div class="field"><label for="blocked">Nights you blocked</label><input id="blocked" type="number" inputmode="decimal" min="0" step="1" value="0"><small>Personal use, repairs</small></div>
+<div class="field full"><label for="revenue">Rental revenue (optional)</label><input id="revenue" type="number" inputmode="decimal" min="0" step="any" value="1900"><small>Nightly rate income for the period, for ADR and RevPAR</small></div>
+<div class="field"><label for="currency">Currency</label><select id="currency"><option value="€">€ Euro</option><option value="$">$ Dollar</option><option value="£">£ Pound</option><option value="">No symbol</option></select></div>
+</div></div>
+<div class="results" aria-live="polite">
+<div class="big"><div class="k">Occupancy rate</div><div class="v" id="r-occ">–</div></div>
+<div class="rows"><div class="row"><span>Available nights</span><span id="r-avail">–</span></div><div class="row"><span>Empty nights</span><span id="r-empty">–</span></div><div class="row"><span>Average daily rate (ADR)</span><span id="r-adr">–</span></div><div class="row"><span>RevPAR</span><span id="r-revpar">–</span></div></div>
+<p class="note" id="warn" hidden style="color:#C0392B">Nights booked is higher than available nights. Check the numbers.</p>
+</div></div>
+<article>
+<h2>Formulas</h2>
+<div class="formula"><strong>Occupancy</strong> = nights booked ÷ (days × units − blocked nights)</div>
+<div class="formula"><strong>ADR</strong> = revenue ÷ nights booked &nbsp;·&nbsp; <strong>RevPAR</strong> = revenue ÷ available nights</div>
+<h3>Example</h3>
+<p>21 nights booked in a 30-night month with €1,900 of revenue gives <strong>70% occupancy</strong>, an ADR of €90.48 and a RevPAR of €63.33.</p>
+<h3>Why RevPAR beats occupancy alone</h3>
+<p>High occupancy can simply mean your price is too low, and a high nightly rate can hide an empty calendar. RevPAR rewards the right balance: if a price cut raises RevPAR, it earned you more money per available night. To see what that means for your profit after costs, use the <a href="airbnb-profit-calculator.html">Airbnb profit calculator</a>.</p>
+</article>
+<aside class="promo">
+<div>
+<h2>Track occupancy and profit for every month</h2>
+<p>The <strong>Rental Profit Dashboard</strong> spreadsheet turns your bookings and expenses into a monthly profit report.</p>
+<ul>
+<li>Net profit, occupancy and average nightly rate per month</li>
+<li>Compare up to 10 properties side by side</li>
+<li>Platform fees and payouts calculated for every booking</li>
+<li>Works in Excel, Google Sheets and Numbers</li>
+</ul>
+<a class="btn" href="https://joergschmid.gumroad.com/l/bpkfpr" rel="noopener">Get the spreadsheet</a><span class="price">$19 · instant download</span>
+</div>
+<a href="https://joergschmid.gumroad.com/l/bpkfpr" rel="noopener"><img src="assets/dashboard.webp" width="1200" height="900" loading="lazy" alt="Rental Profit Dashboard spreadsheet showing monthly revenue, fees, expenses, net profit and occupancy"></a>
+</aside>
+<section class="faq"><h2>Frequently asked questions</h2><details><summary>How do you calculate occupancy rate for an Airbnb?</summary><p>Divide the nights booked by the nights available in the period. Available nights are the days in the period times the number of units, minus nights you blocked yourself (for personal use or repairs).</p></details><details><summary>What is ADR?</summary><p>Average daily rate: your rental revenue divided by the number of nights booked. It shows what you earn on an average booked night.</p></details><details><summary>What is RevPAR?</summary><p>Revenue per available night (or room): revenue divided by all available nights, booked or not. It combines price and occupancy in one number, so it's the best single figure for comparing months or properties.</p></details><details><summary>Should I include blocked nights?</summary><p>Subtract nights you blocked on purpose, because they were never for sale. Don't subtract nights that simply didn't get booked; those are the ones occupancy is meant to measure.</p></details></section>
+<section><h2>More tools for hosts</h2><div class="grid-tools"><a class="tool-card" href="https://joergschmid.gumroad.com/l/bpkfpr" rel="noopener"><div class="ic">★</div><h3>Rental Profit Dashboard</h3><p>Monthly profit, occupancy and nightly rate for up to 10 rentals, from your bookings and expenses.</p><p style="margin-top:8px;font-weight:700;color:#1F4E5A">$19 · Excel &amp; Google Sheets</p></a><a class="tool-card" href="https://joergschmid.gumroad.com/l/rental-investment-calculator" rel="noopener"><div class="ic">★</div><h3>Rental Property Investment Calculator</h3><p>Is a property worth buying? Cash flow, cap rate, cash-on-cash return and a 10-year projection.</p><p style="margin-top:8px;font-weight:700;color:#1F4E5A">$24 · Excel &amp; Google Sheets</p></a><a class="tool-card" href="https://joergschmid.gumroad.com/l/cleaning-turnover-planner" rel="noopener"><div class="ic">★</div><h3>Cleaning & Turnover Planner</h3><p>Automatic cleaning schedule, same-day turnover alerts, calendar and cleaner pay.</p><p style="margin-top:8px;font-weight:700;color:#1F4E5A">$15 · Excel &amp; Google Sheets</p></a></div></section>
+<section><h2>More free tools for hosts</h2><div class="related"><a class="tool-card" href="airbnb-profit-calculator.html"><div class="ic">€</div><h3>Airbnb Profit Calculator</h3><p>See your real monthly profit after platform fees, cleaning and fixed costs, plus your break-even nights.</p></a><a class="tool-card" href="airbnb-fee-calculator.html"><div class="ic">%</div><h3>Airbnb & Booking.com Fee Calculator</h3><p>Work out your payout after the platform fee, or what to charge to receive a set amount.</p></a><a class="tool-card" href="nightly-rate-calculator.html"><div class="ic">↗</div><h3>Nightly Rate Calculator</h3><p>Find your break-even nightly rate and the rate you need to hit a monthly profit target.</p></a><a class="tool-card" href="how-to-calculate-airbnb-profit.html"><div class="ic">✎</div><h3>How to Calculate Airbnb Profit (Step by Step)</h3><p>The formula, a worked example and the costs hosts usually forget.</p></a><a class="tool-card" href="short-term-rental-expenses-checklist.html"><div class="ic">✎</div><h3>Short-Term Rental Expenses: The Complete Checklist</h3><p>Every cost to track for an Airbnb or Booking.com rental, grouped by type.</p></a></div></section>
+</main>
+<footer class="site"><div class="wrap">
+<div><strong>Host Profit Tools</strong><br>Free calculators and guides for short-term rental hosts.<br>
+Not affiliated with Airbnb, Booking.com or Vrbo. Results are estimates, not tax or financial advice.</div>
+<div><a href="airbnb-profit-calculator.html">Airbnb Profit Calculator</a><br><a href="airbnb-fee-calculator.html">Airbnb & Booking.com Fee Calculator</a><br><a href="nightly-rate-calculator.html">Nightly Rate Calculator</a><br><a href="occupancy-rate-calculator.html">Occupancy Rate Calculator</a><br><a href="how-to-calculate-airbnb-profit.html">How to Calculate Airbnb Profit</a><br><a href="short-term-rental-expenses-checklist.html">Short-Term Rental Expenses</a><br></div>
+</div></footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

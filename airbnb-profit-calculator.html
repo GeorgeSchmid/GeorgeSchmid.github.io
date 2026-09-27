@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Airbnb Profit Calculator: Monthly Profit &amp; Break-Even (Free)</title>
+<meta name="description" content="Free Airbnb profit calculator. Enter your nightly rate, nights, fees and costs to see net profit, margin and break-even occupancy for the month.">
+<link rel="canonical" href="https://georgeschmid.github.io/airbnb-profit-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Airbnb Profit Calculator: Monthly Profit &amp; Break-Even (Free)">
+<meta property="og:description" content="Free Airbnb profit calculator. Enter your nightly rate, nights, fees and costs to see net profit, margin and break-even occupancy for the month.">
+<meta property="og:url" content="https://georgeschmid.github.io/airbnb-profit-calculator.html">
+<meta property="og:image" content="https://georgeschmid.github.io/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Airbnb Profit Calculator", "description": "Calculate monthly short-term rental profit and break-even nights.", "url": "https://georgeschmid.github.io/airbnb-profit-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate Airbnb profit?", "acceptedAnswer": {"@type": "Answer", "text": "Add up everything guests paid you (nightly rate × nights plus cleaning fees), subtract the platform fee, subtract the costs of each stay (cleaning, laundry, supplies), and then subtract your fixed monthly costs such as rent or mortgage, utilities, internet and insurance. What's left is your profit before tax."}}, {"@type": "Question", "name": "What profit margin is normal for a short-term rental?", "acceptedAnswer": {"@type": "Answer", "text": "It varies a lot by location, season and whether you own or rent the property. The useful check is your own margin month by month: off-season months often fall below zero once fixed costs are included, even when the yearly total is positive."}}, {"@type": "Question", "name": "Should I include my mortgage in the calculation?", "acceptedAnswer": {"@type": "Answer", "text": "For cash flow, yes: include the full monthly payment so you know what's left in your pocket. For tax purposes, rules differ by country (often only the interest part is deductible), so ask a local accountant."}}, {"@type": "Question", "name": "What is break-even occupancy?", "acceptedAnswer": {"@type": "Answer", "text": "It's the number of booked nights you need each month to cover all your costs. Below it you lose money; every night above it adds profit. This calculator shows it in nights and as a percentage of the month."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://georgeschmid.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Airbnb Profit Calculator", "item": "https://georgeschmid.github.io/airbnb-profit-calculator.html"}]}</script>
+</head>
+<body data-calc="profit">
+<header class="site"><div class="wrap">
+<a class="logo" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1F4E5A"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#E9C46A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="17" width="3" height="7" rx="1" fill="#fff"/><rect x="14.5" y="14" width="3" height="10" rx="1" fill="#fff"/><rect x="19" y="19" width="3" height="5" rx="1" fill="#2A9D8F"/></svg>Host Profit Tools</a>
+<nav class="main" aria-label="Calculators"><a href="airbnb-profit-calculator.html">Airbnb Profit</a><a href="airbnb-fee-calculator.html">Fee</a><a href="nightly-rate-calculator.html">Nightly Rate</a><a href="occupancy-rate-calculator.html">Occupancy Rate</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="./">Home</a> › Airbnb Profit Calculator</div>
+<div class="page-head"><h1>Airbnb Profit Calculator</h1>
+<p class="lead">Enter one month of bookings and costs to see your real profit after platform fees, cleaning and fixed costs, and how many nights you need to break even.</p></div>
+<div class="calc">
+<div>
+<h2>Your month</h2>
+<div class="fields" style="margin-top:12px">
+<div class="field"><label for="rate">Average nightly rate</label><input id="rate" type="number" inputmode="decimal" min="0" step="any" value="80"><small>What guests pay per night, before taxes</small></div>
+<div class="field"><label for="nights">Nights booked</label><input id="nights" type="number" inputmode="decimal" min="0" step="1" value="20"></div>
+<div class="field"><label for="stays">Number of stays</label><input id="stays" type="number" inputmode="decimal" min="0" step="1" value="6"><small>Separate bookings (check-ins)</small></div>
+<div class="field"><label for="cleanfee">Cleaning fee charged per stay</label><input id="cleanfee" type="number" inputmode="decimal" min="0" step="any" value="40"></div>
+<div class="field full"><label for="fee">Platform fee %</label><input id="fee" type="number" inputmode="decimal" min="0" max="99" step="any" value="15.5"><div class="presets" role="group" aria-label="Fee presets"><button type="button" data-fee="15.5">Airbnb host-only 15.5%</button><button type="button" data-fee="3">Airbnb split fee 3%</button><button type="button" data-fee="15">Booking.com ~15%</button><button type="button" data-fee="8">Vrbo ~8%</button><button type="button" data-fee="0">Direct 0%</button></div><small>Presets are typical rates. Check the exact % on your own payout report.</small></div>
+<div class="field"><label for="cleancost">Your cleaning cost per stay</label><input id="cleancost" type="number" inputmode="decimal" min="0" step="any" value="30"><small>What you pay the cleaner</small></div>
+<div class="field"><label for="supplies">Laundry & supplies per stay</label><input id="supplies" type="number" inputmode="decimal" min="0" step="any" value="8"></div>
+<div class="field full"><label for="fixed">Fixed monthly costs</label><input id="fixed" type="number" inputmode="decimal" min="0" step="any" value="900"><small>Rent or mortgage, utilities, internet, insurance, software, etc.</small></div>
+<div class="field"><label for="days">Days in the month</label><input id="days" type="number" inputmode="decimal" min="0" step="1" value="30"></div>
+<div class="field"><label for="currency">Currency</label><select id="currency"><option value="€">€ Euro</option><option value="$">$ Dollar</option><option value="£">£ Pound</option><option value="">No symbol</option></select></div>
+</div></div>
+<div class="results" aria-live="polite">
+<div class="big"><div class="k">Net profit this month</div><div class="v" id="r-net">–</div></div>
+<div class="rows">
+<div class="row"><span>Gross revenue</span><span id="r-gross">–</span></div><div class="row"><span>Platform fees</span><span id="r-fees">–</span></div><div class="row"><span>Cleaning & supplies</span><span id="r-var">–</span></div><div class="row"><span>Fixed costs</span><span id="r-fixed">–</span></div>
+<div class="row"><span>Profit margin</span><span id="r-margin">–</span></div><div class="row"><span>Occupancy</span><span id="r-occ">–</span></div><div class="row"><span>Break-even</span><span id="r-be">–</span></div><div class="row"><span>Profit per year at this pace</span><span id="r-year">–</span></div>
+</div>
+<p class="note">Profit before income tax. The platform fee is applied to the nightly rate and cleaning fee.</p>
+</div></div>
+<aside class="promo">
+<div>
+<h2>Track this automatically, every month</h2>
+<p>The <strong>Rental Profit Dashboard</strong> spreadsheet turns your bookings and expenses into a monthly profit report.</p>
+<ul>
+<li>Net profit, occupancy and average nightly rate per month</li>
+<li>Compare up to 10 properties side by side</li>
+<li>Platform fees and payouts calculated for every booking</li>
+<li>Works in Excel, Google Sheets and Numbers</li>
+</ul>
+<a class="btn" href="https://joergschmid.gumroad.com/l/bpkfpr" rel="noopener">Get the spreadsheet</a><span class="price">$19 · instant download</span>
+</div>
+<a href="https://joergschmid.gumroad.com/l/bpkfpr" rel="noopener"><img src="assets/dashboard.webp" width="1200" height="900" loading="lazy" alt="Rental Profit Dashboard spreadsheet showing monthly revenue, fees, expenses, net profit and occupancy"></a>
+</aside>
+<article>
+<h2>How this calculator works</h2>
+<div class="formula"><strong>Net profit</strong> = (nightly rate × nights + cleaning fee × stays) − platform fee − (cleaning + supplies) × stays − fixed costs</div>
+<p>The <strong>break-even</strong> figure shows how many booked nights you need to cover your fixed costs, assuming your stays keep the same average length. It's the most useful number for quiet months: if you're below it, lowering your price to win more nights usually costs less than an empty calendar.</p>
+<h3>Example</h3>
+<p>An apartment rents for €80 a night and is booked for 20 nights across 6 stays in a 30-day month. Guests pay a €40 cleaning fee, the cleaner costs €30, laundry and supplies €8 per stay, the platform takes 15.5%, and fixed costs are €900.</p>
+<table class="simple"><tr><th>Item</th><th class="n">Amount</th></tr>
+<tr><td>Gross revenue (20 × €80 + 6 × €40)</td><td class="n">€1,840.00</td></tr>
+<tr><td>Platform fee (15.5%)</td><td class="n">−€285.20</td></tr>
+<tr><td>Cleaning &amp; supplies (6 × €38)</td><td class="n">−€228.00</td></tr>
+<tr><td>Fixed costs</td><td class="n">−€900.00</td></tr>
+<tr><th>Net profit</th><th class="n">€426.80</th></tr></table>
+<p>That's a 23% margin at 67% occupancy. Break-even is 14 booked nights: below that, this month would lose money.</p>
+<p>Want to see the full picture? Read <a href="how-to-calculate-airbnb-profit.html">how to calculate Airbnb profit step by step</a> and check the <a href="short-term-rental-expenses-checklist.html">expenses checklist</a> for costs that are easy to forget.</p>
+</article>
+<section class="faq"><h2>Frequently asked questions</h2><details><summary>How do I calculate Airbnb profit?</summary><p>Add up everything guests paid you (nightly rate × nights plus cleaning fees), subtract the platform fee, subtract the costs of each stay (cleaning, laundry, supplies), and then subtract your fixed monthly costs such as rent or mortgage, utilities, internet and insurance. What's left is your profit before tax.</p></details><details><summary>What profit margin is normal for a short-term rental?</summary><p>It varies a lot by location, season and whether you own or rent the property. The useful check is your own margin month by month: off-season months often fall below zero once fixed costs are included, even when the yearly total is positive.</p></details><details><summary>Should I include my mortgage in the calculation?</summary><p>For cash flow, yes: include the full monthly payment so you know what's left in your pocket. For tax purposes, rules differ by country (often only the interest part is deductible), so ask a local accountant.</p></details><details><summary>What is break-even occupancy?</summary><p>It's the number of booked nights you need each month to cover all your costs. Below it you lose money; every night above it adds profit. This calculator shows it in nights and as a percentage of the month.</p></details></section>
+<section><h2>More tools for hosts</h2><div class="grid-tools"><a class="tool-card" href="https://joergschmid.gumroad.com/l/bpkfpr" rel="noopener"><div class="ic">★</div><h3>Rental Profit Dashboard</h3><p>Monthly profit, occupancy and nightly rate for up to 10 rentals, from your bookings and expenses.</p><p style="margin-top:8px;font-weight:700;color:#1F4E5A">$19 · Excel &amp; Google Sheets</p></a><a class="tool-card" href="https://joergschmid.gumroad.com/l/rental-investment-calculator" rel="noopener"><div class="ic">★</div><h3>Rental Property Investment Calculator</h3><p>Is a property worth buying? Cash flow, cap rate, cash-on-cash return and a 10-year projection.</p><p style="margin-top:8px;font-weight:700;color:#1F4E5A">$24 · Excel &amp; Google Sheets</p></a><a class="tool-card" href="https://joergschmid.gumroad.com/l/cleaning-turnover-planner" rel="noopener"><div class="ic">★</div><h3>Cleaning & Turnover Planner</h3><p>Automatic cleaning schedule, same-day turnover alerts, calendar and cleaner pay.</p><p style="margin-top:8px;font-weight:700;color:#1F4E5A">$15 · Excel &amp; Google Sheets</p></a></div></section>
+<section><h2>More free tools for hosts</h2><div class="related"><a class="tool-card" href="airbnb-fee-calculator.html"><div class="ic">%</div><h3>Airbnb & Booking.com Fee Calculator</h3><p>Work out your payout after the platform fee, or what to charge to receive a set amount.</p></a><a class="tool-card" href="nightly-rate-calculator.html"><div class="ic">↗</div><h3>Nightly Rate Calculator</h3><p>Find your break-even nightly rate and the rate you need to hit a monthly profit target.</p></a><a class="tool-card" href="occupancy-rate-calculator.html"><div class="ic">▦</div><h3>Occupancy Rate Calculator</h3><p>Calculate occupancy, average daily rate (ADR) and RevPAR for one or more rentals.</p></a><a class="tool-card" href="how-to-calculate-airbnb-profit.html"><div class="ic">✎</div><h3>How to Calculate Airbnb Profit (Step by Step)</h3><p>The formula, a worked example and the costs hosts usually forget.</p></a><a class="tool-card" href="short-term-rental-expenses-checklist.html"><div class="ic">✎</div><h3>Short-Term Rental Expenses: The Complete Checklist</h3><p>Every cost to track for an Airbnb or Booking.com rental, grouped by type.</p></a></div></section>
+</main>
+<footer class="site"><div class="wrap">
+<div><strong>Host Profit Tools</strong><br>Free calculators and guides for short-term rental hosts.<br>
+Not affiliated with Airbnb, Booking.com or Vrbo. Results are estimates, not tax or financial advice.</div>
+<div><a href="airbnb-profit-calculator.html">Airbnb Profit Calculator</a><br><a href="airbnb-fee-calculator.html">Airbnb & Booking.com Fee Calculator</a><br><a href="nightly-rate-calculator.html">Nightly Rate Calculator</a><br><a href="occupancy-rate-calculator.html">Occupancy Rate Calculator</a><br><a href="how-to-calculate-airbnb-profit.html">How to Calculate Airbnb Profit</a><br><a href="short-term-rental-expenses-checklist.html">Short-Term Rental Expenses</a><br></div>
+</div></footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
